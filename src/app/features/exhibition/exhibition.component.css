@@ -1,0 +1,111 @@
+.grid-line {
+    border-top: 1px solid #000;
+    grid-column: 1/9;
+    margin-bottom: 4rem;
+}
+
+.exhibition-container{
+    margin-top: 20rem;
+}
+
+.exhibitions-container{
+    font-family: var(--primary-font);
+    font-size: var(--font-size-s);
+    font-weight: 100;
+    line-height: 2;
+    color: var(--primary-color);
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 0rem 1rem;
+    margin-bottom: 10rem;
+}
+
+.exhibition-title {
+    font-family: var(--secondary-font);
+    color: var(--primary-color);
+    font-weight: 400;
+    text-align: left;
+    width: 100%;
+    grid-column: 1/5;
+    margin: 0;
+    font-size: var(--font-size-s);
+}
+
+.exhibition-sub-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-column: 5/9;
+    margin-bottom: 4rem;
+}
+
+.exhibition-list-year{
+    font-family: var(--secondary-font);
+    font-weight: 300;
+    grid-column: 1;
+    line-height: 1.5;
+}
+
+.exhibition-list-title{
+    grid-column: 2/9;
+    color: var(--secondary-color);
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.exhibition-container ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bexhibitionio-container ul li{
+    margin-bottom: 3rem;
+}
+
+.exhibition-container ul li p{
+    padding: 0;
+    margin: 0;
+}
+
+.exhibition-list-text{
+    font-style: normal;
+}
+
+@media (max-width: 480px) {
+    .exhibition-container{
+        margin-top: 15rem;
+    }
+    
+
+    .grid-line {
+        border-top: 0px;
+        grid-column: 1/4;
+        margin-bottom: 3rem;
+    }
+
+    .exhibitions-container {
+      grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+      gap: 1rem; /* Espacio entre columnas y filas */
+      
+    }
+  
+    .exhibition-title {
+        font-size: 2.5rem;
+        font-weight: 300;
+      grid-column: 1 / -1; /* Ocupa todas las columnas */
+    }
+  
+    .exhibition-sub-container {
+      grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+      grid-column: 1 / -1; /* Ocupa todas las columnas */
+      margin-bottom: 3rem;
+    }
+  
+    .exhibition-list-year {
+      grid-column: 1; /* Ocupa la primera columna */
+    }
+  
+    .exhibition-list-text {
+      grid-column: 2 / 5; /* Ocupa desde la columna 2 hasta el final */
+    }
+}

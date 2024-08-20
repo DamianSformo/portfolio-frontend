@@ -1,0 +1,37 @@
+<div class="toolbar-wrapper">
+  <mat-toolbar class="custom-toolbar">
+    <div class="toolbar-content">
+      <p class="toolbar-title">Marcia Ruiz Bochides</p>
+      <button mat-icon-button class="menu-button" (click)="toggleMenu()">
+        <mat-icon>{{ isMenuOpen ? 'close' : 'menu' }}</mat-icon>
+      </button>
+      
+      
+      <ul class="toolbar-nav">
+        <div  *ngFor="let menu of menusView">
+        <li><a mat-button [routerLink]="menu.router">{{ menu.title }}</a></li>
+      </div>
+        <li>
+          <div class="custom-select-container">
+            <mat-select [(value)]="selectedLanguage" disableRipple class="small-select" (selectionChange)="onLanguageChange($event.value)">
+              <mat-option value="es" class="select-option">ES</mat-option>
+              <mat-option value="en" class="select-option">EN</mat-option>
+            </mat-select>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </mat-toolbar>
+</div>
+
+<div class="mobile-menu" [class.open]="isMenuOpen">
+  <button mat-icon-button class="close-button" (click)="toggleMenu()">
+  </button>
+  <ul class="mobile-nav">
+    <li><a mat-button routerLink="/bio" (click)="toggleMenu()">Bio</a></li>
+    <li><a mat-button routerLink="/projects" (click)="toggleMenu()">Proyectos</a></li>
+    <li><a mat-button routerLink="/visuals" (click)="toggleMenu()">Visuales</a></li>
+    <li><a mat-button routerLink="/exhibition" (click)="toggleMenu()">Exposiciones</a></li>
+    <li><a mat-button routerLink="/contact" (click)="toggleMenu()">Contacto</a></li>
+  </ul>
+</div>

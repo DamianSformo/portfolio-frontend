@@ -1,0 +1,16 @@
+<div class="bio-container bio-container-study">
+
+    <h2 class="bio-title">{{ study }}</h2>
+    <div class="grid-line"></div>
+      <ul class="bio-text">
+        <li *ngFor="let study of studies"> 
+          <p class="study-year">{{ study.startYear }} {{ study.endYear ? ' - ' + study.endYear : '' }}</p>
+          <p class="study-text">{{ study.description }}
+              <span *ngIf="study.site">
+                  {{ currentLanguage === 'es' ? 'en' : 'in' }} {{ study.site }}
+              </span>
+          </p>
+        </li>
+      </ul>
+
+</div>

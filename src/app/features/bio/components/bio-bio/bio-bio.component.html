@@ -1,0 +1,8 @@
+<div *ngIf="bio" class="bio-container bio-container-bio">
+
+        <h2 class="bio-title">{{ aboutMe }}</h2>
+        <div class="grid-line"></div>
+        <p class="bio-text">{{ bio.bio }}</p>
+        <img class="bio-img" [src]="bio.urlPhoto" alt="{{ bio.textPhoto }}">
+
+</div>

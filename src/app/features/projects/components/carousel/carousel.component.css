@@ -1,0 +1,55 @@
+
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw; /* Ocupa todo el ancho de la pantalla */
+    height: 100vh; /* Ocupa todo el alto de la pantalla */
+    background-color: black;
+    position: fixed; /* Fija el carrusel en la pantalla */
+    top: 0;
+    left: 0;
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 3.5s ease; /* Transición de opacidad */
+    z-index: 1000; /* Asegúrate de que el carrusel esté encima de otros elementos */
+}
+
+.carousel-container.open {
+    opacity: 1; /* Visible cuando se añade la clase open */
+}
+
+.carousel-container.closed {
+    opacity: 0; /* Invisible cuando se añade la clase closed */
+}
+
+.carousel-image {
+    max-height: 100%; /* Limita la altura de la imagen */
+    object-fit: contain; /* Mantiene las proporciones de la imagen */
+}
+
+.nav-button {
+    padding: 3rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 10;
+    display: flex; /* Usa flexbox para centrar el contenido */
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center;
+}
+
+.mat-icon {
+    width: 100%;
+    height: 100%;
+    font-size: 4rem;
+    font-weight: 100;
+    color: white;
+}
+
+@media (max-width: 480px) {
+    .carousel-image {
+        max-width: 60%; 
+    }
+}

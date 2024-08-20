@@ -1,0 +1,30 @@
+<div *ngIf="project" class="project-container">
+
+    <div class="grid-line"></div>
+    <div class="project-intro">
+        <h2 class="project-title">{{ project.title }}</h2>
+        <p class="project-text">{{ project.description }}</p>
+    </div>
+
+    <div class="project-info">
+        <div class = "date">
+            <p class="label">Fecha</p>
+            <p>{{project.year}}</p>
+        </div>
+        <div class = "site">
+            <p class="label">Lugar</p>
+            <p>{{project.site}}</p>
+        </div>
+        <div class = "technique">
+            <p class="label">Técnica</p>
+            <p>{{project.technique}}</p>
+        </div> 
+    </div>
+
+    <div class="project-files">
+        <div *ngFor="let file of project.projectFiles; let i = index" class="project-file-item">
+          <img [src]="file.url" alt="Project file" (click)="openCarousel(i)">
+          <p class="project-files-text" *ngIf="file.textEs">{{file.textEs}}</p>
+        </div>
+    </div>
+</div> 

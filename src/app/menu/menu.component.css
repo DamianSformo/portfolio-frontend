@@ -1,0 +1,152 @@
+.custom-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  color: var(--primary-color);
+  background: transparent;
+  padding: 0 18rem;
+}
+
+.toolbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+}
+
+.toolbar-title {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.toolbar-nav {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.toolbar-nav li {
+  padding: 1.5rem;
+}
+
+.toolbar-nav li a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.custom-select-container {
+  display: flex;
+  align-items: center;
+}
+
+.small-select {
+  border: none;
+  box-shadow: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.small-select .mat-select-arrow {
+  margin: 0;
+}
+
+::ng-deep .mat-select-value {
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+::ng-deep .mat-option-text {
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.menu-button {
+  display: none; /* Oculta el botón de menú en resoluciones mayores */
+  padding: 0; /* Elimina padding adicional */
+  margin: 0; /* Elimina margen adicional */
+  background: none; /* Elimina el fondo del botón */
+  border: none; /* Elimina el borde del botón */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.menu-button mat-icon {
+  font-size: 2.5rem; /* Ajusta el tamaño del ícono si es necesario */
+  line-height: 1; /* Ajusta el alto de la línea del ícono */
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  overflow-y: auto;
+  z-index: 999;
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(-100%);
+}
+
+.mobile-menu.open {
+  transform: translateY(0);
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8rem 2rem 8rem 2rem;
+  margin: 0;
+  list-style-type: none;
+}
+
+.mobile-nav li {
+  padding: 1.5rem;
+}
+
+.mobile-nav li a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 2.8rem;
+  font-weight: 100;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+@media (max-width: 600px) {
+  .menu-button {
+    display: inline-flex; /* Muestra el botón de menú en resoluciones móviles */
+    align-items: center; /* Centra el ícono verticalmente */
+    justify-content: center; /* Centra el ícono horizontalmente */
+  }
+
+  .toolbar-nav {
+    display: none; /* Oculta la lista de navegación en móviles */
+  }
+
+  .mobile-menu {
+    display: block; /* Muestra el menú móvil en móviles */
+  }
+
+  .custom-toolbar {
+    padding: 0 2rem;
+  }
+}

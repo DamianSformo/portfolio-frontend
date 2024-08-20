@@ -1,0 +1,134 @@
+.grid-line {
+    border-top: 1px solid #000;
+    grid-column: 1/9;
+
+}
+
+.project-container{
+    font-size: var(--font-size-s);
+    font-family: var(--primary-font);
+    color: var(--secondary-color);
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 0px 10px;
+    margin-top: 20rem;
+}
+
+.project-intro {
+    grid-column: 1/6;
+}
+
+.project-title{
+    font-size: 4.5rem;
+    line-height: 1.2;
+    font-family: var(--secondary-font);
+    font-weight: 100;
+    color: var(--primary-color);
+    margin-bottom: 7rem;
+    margin-top: 3rem;
+}
+
+.project-text{
+
+    line-height: 2;
+    font-family: var(--primary-font);
+    font-weight: 100;
+    color: var(--secondary-color);
+    margin-bottom: 4rem;
+}
+
+.project-info {
+    grid-column: 1/6;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    font-size: var(--font-size-xs);
+    font-weight: 100;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 3rem;
+}
+
+.date{
+    grid-column: 1;
+}
+
+.site{
+    grid-column: 2;
+}
+
+.technique{
+    grid-column: 3/7;
+}
+
+.date .site .technique {
+    color: var(--secondary-color);
+    line-height: 2;
+}
+
+.label {
+    color: var(--primary-color);
+    padding: 0;
+    line-height: 1;
+    margin: 0 0 0.8rem 0 ;
+}
+
+.project-files {
+    grid-column: 1/9;
+}
+
+.project-file-item{
+    width: 100%;
+    padding-bottom: 1.8rem;
+    margin: 0;
+}
+
+.project-files img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-files p{
+    font-size: var(--font-size-xs);
+    font-weight: 100;
+    font-style: italic;
+    margin: 0;
+    padding-top: 0.15rem;
+}
+
+@media (max-width: 480px) {
+    .project-container {
+      grid-template-columns: repeat(8, 1fr);
+      gap: 1rem;
+    }
+
+    .project-intro {
+        display: grid;
+        grid-column: 1/9;
+    }
+
+    .project-info {
+        display: grid;
+        grid-column: 1/9;
+    }
+
+    .project-info {
+        display: grid;
+        grid-column: 1/9;
+        grid-template-columns: repeat(8, 1fr);
+    }
+
+    .date{
+        grid-column: 1/3;
+    }
+    
+    .site{
+        grid-column: 3/5;
+    }
+    
+    .technique{
+        grid-column: 5/9;
+    }
+
+   
+  }

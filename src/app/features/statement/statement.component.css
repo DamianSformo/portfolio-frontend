@@ -1,0 +1,102 @@
+.floating-box {
+    position: fixed; /* Fija la posición del recuadro */
+    top: 50%; /* Centra verticalmente */
+    right: 0; /* Pega al margen derecho */
+    transform: translateY(-50%); /* Ajusta el desplazamiento vertical para centrar */
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto flotante */
+    z-index: 1000; /* Asegura que el recuadro esté encima de otros elementos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 10px;
+  }
+  
+  .vertical-button {
+    padding: 0px;
+    writing-mode: vertical-rl; /* Hace que el texto del botón sea vertical */
+    transform: rotate(180deg); /* Rota el texto para que se lea de abajo hacia arriba */
+    color: rgb(168, 168, 168); /* Color del texto del botón */
+    border: none; /* Sin borde */
+    background-color: #ffffff; /* Fondo blanco */
+    cursor: pointer; /* Cursor de mano al pasar sobre el botón */
+  }
+  
+  .side-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 45%; /* Ajusta el ancho del panel según sea necesario */
+    height: 100%;
+    background-color: white;
+    border-left: 1px solid #ccc;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+    z-index: 1999; /* Asegura que el panel esté debajo del botón flotante */
+    transform: translateX(0);
+    animation: slide-in 0.3s forwards;
+  }
+  
+  @keyframes slide-in {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slide-out {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+  
+  .slide-out {
+    animation: slide-out 0.3s forwards;
+  }
+  
+  .side-panel-content {
+    margin: 40px 70px 0px 80px;
+  }
+
+  h2{
+    font-size: 3rem;
+    font-weight: 100;
+    font-family: 'Chivo', sans-serif;
+    margin-bottom: 3rem;
+  }
+
+  p{
+    font-size: 1.6rem;
+
+    font-weight: 100;
+    font-family: 'Chivo', sans-serif;
+    line-height: 2;
+  }
+
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 4rem;
+    padding: 0;
+    margin-bottom: 3rem;
+    font-weight: 100;
+    cursor: pointer;
+    color: #000; /* Ajusta el color según tu diseño */
+  }
+  
+
+  @media (max-width: 480px) {
+
+    .side-panel {
+      width: 100%;
+    }
+
+    .side-panel-content {
+      margin: 20px 40px 0px 40px;
+    }
+  
+  }

@@ -1,1 +1,79 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --breakpoint-xs: 480px; /* phone */
+    --breakpoint-s: 768px; /* tablet */
+    --breakpoint-m: 1024px; /* desktop */
+
+    --font-size-xs: 1.6rem;
+    --font-size-s: 1.8rem;
+    --font-size-m: 2rem;
+
+    --primary-font: 'Chivo', sans-serif;
+    --secondary-font: 'Archivo', sans-serif; 
+
+    --primary-color: #062726;
+    --secondary-color: #ADADAD;
+    --background-color: #FFFFFF;
+    --background-color1: #F5FBEF;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    margin: 0px 18rem 0px 18rem;
+    height: 100%;
+    background-color: var(--background-color);
+}
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+@media (max-width: 480px) {
+    html {
+        margin: 0rem 2rem 0rem 2rem;
+        font-size: 50%; 
+
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    html {
+        margin: 0rem 6rem 0rem 6rem;
+
+    }
+}
+
+@media (min-width: 769px) {
+    html {
+        margin: 0rem 18rem 0rem 18rem;
+
+    }
+}
+
+
+  /* Estilos para matdialog */
+
+  .full-screen-dialog .mat-dialog-container {
+    width: 100vw !important;
+    height: 100vh !important;
+    padding: 0; /* Elimina el padding para asegurar que el contenedor ocupe todo el espacio */
+    overflow: hidden; /* Evita el scroll dentro del contenedor */
+    transition: none; /* Elimina las transiciones */
+  }
+
+
+.cdk-overlay-pane {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    max-height: none !important;
+    transition: none !important;
+  }
+
+  .mat-dialog-content {
+    transition: none !important; /* Desactiva cualquier transición en el contenido del diálogo */
+  }

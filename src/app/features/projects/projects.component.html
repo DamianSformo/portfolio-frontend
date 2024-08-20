@@ -1,0 +1,11 @@
+<div class="projects-container">
+    <div class="project" *ngFor="let project of projectsPreview">
+        <a [routerLink]="['/projects', project.id]">
+            <div class="image-container">
+                <img [src]="project.projectFile.url" alt="Project Image">
+                <p class="project-title">{{ project.title }}</p>
+            </div>
+        </a>
+            <p class="project-year">{{ project.year }}</p>
+    </div>
+  </div>
