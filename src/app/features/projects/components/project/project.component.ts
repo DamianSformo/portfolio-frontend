@@ -4,13 +4,13 @@ import { ProjectService } from '../../services/project.service';
 import { ActivatedRoute } from '@angular/router';
 import { LanguageService } from 'src/app/menu/language.service';
 import {
-  MatDialog,
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
-  MatDialogRef,
-  MatDialogTitle,
-} from '@angular/material/dialog';
+  MatLegacyDialog as MatDialog,
+  MatLegacyDialogActions as MatDialogActions,
+  MatLegacyDialogClose as MatDialogClose,
+  MatLegacyDialogContent as MatDialogContent,
+  MatLegacyDialogRef as MatDialogRef,
+  MatLegacyDialogTitle as MatDialogTitle,
+} from '@angular/material/legacy-dialog';
 import { CarouselComponent } from '../carousel/carousel.component';
 
 @Component({

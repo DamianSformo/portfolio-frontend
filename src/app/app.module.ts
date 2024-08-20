@@ -12,14 +12,14 @@ import { ExhibitionModule } from './features/exhibition/exhibition.module';
 import { StatementModule } from './features/statement/statement.module';
 import { ProjectsModule } from './features/projects/projects.module';
 
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
 import { OverlayModule } from '@angular/cdk/overlay';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
+import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
+import { MatLegacyListModule as MatListModule } from '@angular/material/legacy-list';
 
 
 @NgModule({
