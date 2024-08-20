@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http'; 
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'; 
 import { AppComponent } from './app.component';
 
 import { BioModule } from './features/bio/bio.module';
@@ -22,30 +22,22 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatLegacyListModule as MatListModule } from '@angular/material/legacy-list';
 
 
-@NgModule({
-  declarations: [
-    AppComponent
-
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    MenuModule,
-    BioModule,
-    ExhibitionModule,
-    StatementModule,
-    ProjectsModule,
-    MatDialogModule,
-    OverlayModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatListModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        MenuModule,
+        BioModule,
+        ExhibitionModule,
+        StatementModule,
+        ProjectsModule,
+        MatDialogModule,
+        OverlayModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatListModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
