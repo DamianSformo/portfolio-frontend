@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { LanguageService } from './language.service';
 import { MenuService } from './services/menu.service';
 import { Menu } from './models/menu.model';
-import { log } from 'console';
 
 @Component({
   selector: 'app-menu',
@@ -11,7 +10,7 @@ import { log } from 'console';
 })
 export class MenuComponent implements OnInit {
   menusView: Menu[] = [];
-  selectedLanguage: string = '';
+  selectedLanguage: string = 'es';
   currentLanguage: string = '';
   isMenuOpen = false;
 
@@ -24,7 +23,7 @@ export class MenuComponent implements OnInit {
     private languageService: LanguageService,
     private menuService: MenuService,
   ) {
-    this.languageService.currentLanguage$.subscribe(lang => this.selectedLanguage = lang);
+    this.languageService.currentLanguage$.subscribe((lang: string) => this.selectedLanguage = lang);
   }
 
   onLanguageChange(language: string) {
@@ -36,7 +35,6 @@ export class MenuComponent implements OnInit {
     this.currentLanguage = this.languageService.getLanguage();
     this.menuService.getView(this.currentLanguage).subscribe((data: any) => {
       this.menusView = data.response;
-      console.log(this.menusView);
       
     });
   }

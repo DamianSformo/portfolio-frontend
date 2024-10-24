@@ -14,9 +14,11 @@
   
 .image-container {
   width: 100%; 
-  padding-top: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  overflow: hidden;
 }
   
 .image-container img {
@@ -36,16 +38,15 @@ a:hover .image-container img {
 
 .project-title {
   font-weight: 100;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  text-align: center;
   width: 100%;
   padding: 1rem;
   color: var(--background-color);
-  text-align: center;
+  text-align: center; 
   opacity: 0;
   transition: opacity 0.5s ease;
+  z-index: 1;
+  position: absolute;
 }
   
 a:hover .project-title {

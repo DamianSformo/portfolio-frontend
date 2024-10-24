@@ -5,11 +5,12 @@ import { RouterModule } from '@angular/router';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
+import { MatButtonModule } from '@angular/material/button';  // Usa el módulo actual
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatLegacyListModule as MatListModule } from '@angular/material/legacy-list';
-import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field'; // Importa MatFormFieldModule
-import { MatLegacySelectModule as MatSelectModule } from '@angular/material/legacy-select'; 
+import { MatListModule } from '@angular/material/list';  // Usa el módulo actual
+import { MatFormFieldModule } from '@angular/material/form-field';  // Usa el módulo actual
+import { MatSelectModule } from '@angular/material/select';  // Usa el módulo actual
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [MenuComponent],
@@ -22,7 +23,8 @@ import { MatLegacySelectModule as MatSelectModule } from '@angular/material/lega
     MatSidenavModule,
     MatListModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatInputModule
   ],
   exports: [MenuComponent]
 })

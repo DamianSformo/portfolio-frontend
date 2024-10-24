@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { LanguageService } from '../menu/language.service';
 
 type Language = 'es' | 'en';
-type TranslationKeys = 'aboutMe' | 'study' | 'individualExhibitions' | 'groupExhibitions'; 
+type TranslationKeys = 'aboutMe' | 'study' | 'individualExhibitions' | 'groupExhibitions' | 'scholarshipsPrizesAndResidencies'; 
 
 interface Translations {
   es: Record<TranslationKeys, string>;
@@ -19,15 +19,17 @@ export class TranslationService {
       aboutMe: 'Sobre mí',
       study: 'Estudios',
       individualExhibitions: 'Exhibiciones Individuales',
-      groupExhibitions: 'Exhibiciones Individuales'
-      
-      // Agrega más traducciones aquí
+      groupExhibitions: 'Exhibiciones Grupales',
+      scholarshipsPrizesAndResidencies: 'Becas, premios y residencias',
+
     },
     en: {
       aboutMe: 'About Me',
       study: 'Studies',
       individualExhibitions: 'Individual Exhibitions',
-      groupExhibitions: 'Group Exhibitions'
+      groupExhibitions: 'Group Exhibitions',
+      scholarshipsPrizesAndResidencies: 'Scholarships, Prizes and Residencies',
+
     }
   };
 

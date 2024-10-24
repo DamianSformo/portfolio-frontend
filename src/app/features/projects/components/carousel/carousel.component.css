@@ -1,26 +1,24 @@
-
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Evita el scroll dentro del modal */
+  }
 
 .carousel-container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    width: 100vw; /* Ocupa todo el ancho de la pantalla */
-    height: 100vh; /* Ocupa todo el alto de la pantalla */
+    align-items: center;
+    width: 100%;
+    height: 100%;
     background-color: black;
-    position: fixed; /* Fija el carrusel en la pantalla */
-    top: 0;
-    left: 0;
-    opacity: 0; /* Inicialmente oculto */
-    transition: opacity 3.5s ease; /* Transición de opacidad */
-    z-index: 1000; /* Asegúrate de que el carrusel esté encima de otros elementos */
-}
-
-.carousel-container.open {
-    opacity: 1; /* Visible cuando se añade la clase open */
-}
-
-.carousel-container.closed {
-    opacity: 0; /* Invisible cuando se añade la clase closed */
+    overflow: hidden;/* Asegúrate de que el carrusel esté encima de otros elementos */
 }
 
 .carousel-image {

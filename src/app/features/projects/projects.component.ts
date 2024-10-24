@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectPreview } from './models/project-preview.model';
 import { ProjectService } from './services/project.service';
-import { log } from 'console';
 
 @Component({
   selector: 'app-projects',

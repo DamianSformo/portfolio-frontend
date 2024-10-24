@@ -62,18 +62,59 @@ body {
     height: 100vh !important;
     padding: 0; /* Elimina el padding para asegurar que el contenedor ocupe todo el espacio */
     overflow: hidden; /* Evita el scroll dentro del contenedor */
-    transition: none; /* Elimina las transiciones */
+    transition: none;
+    position: absolute; /* Elimina las transiciones */
   }
 
 
 .cdk-overlay-pane {
-    width: 100vw !important;
-    height: 100vh !important;
+    /*width: 100vw !important;*/
+    /*height: 100vh !important;*/
     max-width: none !important;
     max-height: none !important;
     transition: none !important;
+    position: absolute;
   }
 
-  .mat-dialog-content {
-    transition: none !important; /* Desactiva cualquier transición en el contenido del diálogo */
+.cdk-global-scrollblock {
+    position: static !important; /* Mantener el control sobre el flujo del layout */
+    width: calc(100% - 17px); /* Ajusta según el ancho del scrollbar */
+    padding-right: 17px !important; /* Compensa la eliminación del scroll */
+    overflow: hidden !important; 
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+div.mat-mdc-select-panel{
+    background: transparent !important;
+    border-radius: none !important;
+    box-shadow: none !important;
+    font-size: 2rem !important;
+    color: var(--primary-color);
+  }
+
+  .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled):not(.mat-mdc-option-multiple){
+    background-color: transparent !important;
+  }
+
+  
+
+  .mat-mdc-option{
+    font-size: 2rem !important;
+    color: var(--primary-color) !important;
+    font-weight: 100 !important;
+    align-items: center !important;
+    padding: 0 !important;
+    font-family: 'Archivo', sans-serif !important;
+  }
+
+  .mat-mdc-option:hover {
+    background-color: transparent !important;
+  }
+
+
+  app-processing {
+    width: 100wh;
+    height: 100vh;
   }

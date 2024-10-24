@@ -25,11 +25,10 @@
     font-weight: 100;
     color: var(--primary-color);
     margin-bottom: 7rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 .project-text{
-
     line-height: 2;
     font-family: var(--primary-font);
     font-weight: 100;
@@ -45,7 +44,7 @@
     font-weight: 100;
     padding: 0;
     margin: 0;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 .date{
@@ -82,7 +81,17 @@
     margin: 0;
 }
 
+.project-info-value{
+    margin: 0.5rem 0 ;
+}
+
 .project-files img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-files video {
     width: 100%;
     height: auto;
     display: block;

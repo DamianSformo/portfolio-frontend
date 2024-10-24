@@ -1,35 +1,32 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA, MatLegacyDialogRef as MatDialogRef } from '@angular/material/legacy-dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'; 
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
-  styleUrls: ['./carousel.component.css']
+  styleUrls: ['./carousel.component.css'],
 })
 export class CarouselComponent implements OnInit {
 
   currentIndex = 0;
-  isOpen = false; // Inicialmente no está abierto
+  images: string [];
+  fileUrl: string;
 
   constructor(
     public dialogRef: MatDialogRef<CarouselComponent>,
-    @Inject(MAT_DIALOG_DATA) public images: string[]
-  ) {}
+    @Inject(MAT_DIALOG_DATA) data: { images: string[], fileUrl: string }
+  ) {this.images = data.images;
+    this.fileUrl = data.fileUrl;}
 
-
-
-  ngOnInit(): void {
-    // Usa un retraso para permitir que el carrusel se renderice antes de aplicar la clase open
-    setTimeout(() => {
-      this.isOpen = true;
-    }, 0); // Cambia esto si es necesario para asegurar el tiempo de renderizado
-  }
+  ngOnInit(): void {}
 
   previousImage(): void {
     this.currentIndex = (this.currentIndex > 0) ? this.currentIndex - 1 : this.images.length - 1;
+    this.fileUrl = this.images[this.currentIndex];
   }
 
   nextImage(): void {
     this.currentIndex = (this.currentIndex < this.images.length - 1) ? this.currentIndex + 1 : 0;
+    this.fileUrl = this.images[this.currentIndex];
   }
 }

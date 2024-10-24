@@ -3,17 +3,17 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ExhibitionComplete } from '../models/exhibitioncomplete.model';
 
+import { environment } from 'src/environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ExhibitionService {
 
-  private apiUrl = 'http://localhost:8081';
-
   constructor(private http: HttpClient) { }
 
   getComplete( lang: string): Observable<ExhibitionComplete> {
-    const url = `${this.apiUrl}/exhibition/getComplete?lang=${lang}`;
+    const url = `${environment.apiUrl}/exhibition/getComplete?lang=${lang}`;
     return this.http.get<ExhibitionComplete>(url);
   }
 

@@ -1,9 +1,12 @@
-<div mat-dialog-content class="carousel-container" [ngClass]="{'open': isOpen, 'closed': !isOpen}">
+<div class="modal-container">
+
+<div class="carousel-container">
     <button (click)="previousImage()" class="nav-button prev-button">
       <mat-icon>chevron_left</mat-icon>
     </button>
-    <img [src]="images[currentIndex]" alt="Imagen del carrusel" class="carousel-image">
+    <img [src]="fileUrl" alt="Imagen del carrusel" class="carousel-image">
     <button (click)="nextImage()" class="nav-button next-button">
       <mat-icon>chevron_right</mat-icon>
     </button>
+</div>
 </div>
