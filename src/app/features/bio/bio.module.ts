@@ -15,11 +15,12 @@ import { BioBioComponent } from './components/bio-bio/bio-bio.component';
         BioBioComponent
     ],
     exports: [
-        BioComponent // Asegúrate de exportar BioComponent si quieres usarlo en otros módulos
-    ], imports: [CommonModule,
-        BioRoutingModule], providers: [
-        BioService // Asegúrate de proporcionar el servicio si es necesario
-        ,
+        BioComponent
+    ], imports: [
+        CommonModule,
+        BioRoutingModule
+    ], providers: [
+        BioService,
         provideHttpClient(withInterceptorsFromDi())
     ] })
 export class BioModule { }
