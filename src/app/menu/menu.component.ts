@@ -14,7 +14,6 @@ export class MenuComponent implements OnInit {
   currentLanguage: string = '';
   isMenuOpen = false;
 
-
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }

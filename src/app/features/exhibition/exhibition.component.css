@@ -4,6 +4,22 @@
     margin-bottom: 4rem;
 }
 
+.spinner-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* O la altura que prefieras */
+  }
+  
+  .my-custom-spinner {
+    color: #ff8000; /* Naranja */
+  }
+  
+  /* Color personalizado para el spinner (opcional) */
+  .mat-spinner circle {
+    stroke: #ff5722; /* Cambia el color aquí */
+  }
+
 .exhibition-container{
     margin-top: 20rem;
 }

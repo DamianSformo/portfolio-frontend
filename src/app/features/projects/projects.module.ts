@@ -7,6 +7,7 @@ import { ProjectComponent } from './components/project/project.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { MatIconModule } from '@angular/material/icon';
 
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';   
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     CommonModule,
     ProjectsRoutingModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressSpinnerModule
   ]
 })
 export class ProjectsModule { }

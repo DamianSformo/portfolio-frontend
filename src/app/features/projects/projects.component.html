@@ -1,3 +1,7 @@
+<div *ngIf="isLoading">
+    <mat-spinner [diameter]="50" color="primary"></mat-spinner>
+  </div>
+
 <div class="projects-container">
     <div class="project" *ngFor="let project of projectsPreview">
         <a [routerLink]="['/projects', project.id]">

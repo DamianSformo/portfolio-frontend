@@ -11,12 +11,14 @@ import { Prize } from './models/prize.model';
   templateUrl: './exhibition.component.html',
   styleUrls: ['./exhibition.component.css']
 })
-export class ExhibitionComponent implements OnInit {
+export class ExhibitionComponent implements OnInit  {
+  isLoading = false;
 
   exhibitionComplete: ExhibitionComplete | undefined;
   exhibitionsIndividual: Exhibition[] = [];
   exhibitionsGroup: Exhibition[] = [];
   prizes: Prize[] = [];
+
   currentLanguage: string = '';
   individualExhibitions?: string; 
   groupExhibitions?: string; 
@@ -27,7 +29,8 @@ export class ExhibitionComponent implements OnInit {
     private languageService: LanguageService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    this.isLoading = true;
     this.currentLanguage = this.languageService.getLanguage();
     this.exhibitionService.getComplete(this.currentLanguage).subscribe((data: any) => {
       this.exhibitionsIndividual = data.response.exhibitionIndividual;
@@ -37,7 +40,10 @@ export class ExhibitionComponent implements OnInit {
       this.individualExhibitions = this.translationService.getTranslation('individualExhibitions');
       this.groupExhibitions = this.translationService.getTranslation('groupExhibitions');
       this.scholarshipsPrizesAndResidencies = this.translationService.getTranslation('scholarshipsPrizesAndResidencies');
+    
+      this.isLoading = false;
     });
+
     
   }
 

@@ -1,54 +1,63 @@
+
+
 <div class="exhibition-container">
 
-<div class="exhibitions-container">
-  <h2 class="exhibition-title">{{ individualExhibitions }}</h2>
-  <div class="grid-line"></div>
-  <div *ngFor="let exhibitionIndividual of exhibitionsIndividual; let i = index" class="exhibition-sub-container">
-    <ul class="exhibition-list-year">
-      <li *ngIf="i === 0 || exhibitionIndividual.year !== exhibitionsIndividual[i - 1].year">
-        <p>{{ exhibitionIndividual.year }}</p>
-      </li>
-    </ul>
-    <ul class="exhibition-list-title">
-      <li>
-        <span>{{ exhibitionIndividual.title }}</span>. <span class="exhibition-list-text">{{ exhibitionIndividual.text }}</span>
-      </li>
-    </ul>
+  <!-- Spinner de carga -->
+  <div *ngIf="isLoading" class="spinner-container">
+    <mat-spinner [diameter]="50" color="tertiary"></mat-spinner>
   </div>
-</div>
 
-
-<div class="exhibitions-container">
-  <h2 class="exhibition-title">{{ groupExhibitions }}</h2>
-  <div class="grid-line"></div>
-  <div *ngFor="let exhibitionGroup of exhibitionsGroup; let i = index" class="exhibition-sub-container">
-    <ul class="exhibition-list-year">
-      <li *ngIf="i === 0 || exhibitionGroup.year !== exhibitionsGroup[i - 1].year">
-        <p>{{ exhibitionGroup.year }}</p>
-      </li>
-    </ul>
-    <ul class="exhibition-list-title">
-      <li>
-        <span>{{ exhibitionGroup.title }}</span>. <span class="exhibition-list-text">{{ exhibitionGroup.text }}</span>
-      </li>
-    </ul>
+  <div *ngIf="!isLoading">
+  <div class="exhibitions-container">
+    <h2 class="exhibition-title">{{ individualExhibitions }}</h2>
+    <div class="grid-line"></div>
+    <div *ngFor="let exhibitionIndividual of exhibitionsIndividual; let i = index" class="exhibition-sub-container">
+      <ul class="exhibition-list-year">
+        <li *ngIf="i === 0 || exhibitionIndividual.year !== exhibitionsIndividual[i - 1].year">
+          <p>{{ exhibitionIndividual.year }}</p>
+        </li>
+      </ul>
+      <ul class="exhibition-list-title">
+        <li>
+          <span>{{ exhibitionIndividual.title }}</span>. <span class="exhibition-list-text">{{ exhibitionIndividual.text }}</span>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
 
-<div class="exhibitions-container">
-  <h2 class="exhibition-title">{{ scholarshipsPrizesAndResidencies }}</h2>
-  <div class="grid-line"></div>
-  <div *ngFor="let prize of prizes; let i = index" class="exhibition-sub-container">
-    <ul class="exhibition-list-year">
-      <li *ngIf="i === 0 || prize.year !== prizes[i - 1].year">
-        <p>{{ prize.year }}</p>
-      </li>
-    </ul>
-    <ul class="exhibition-list-title">
-      <li>
-        <span class="exhibition-list-text">{{ prize.title }}</span>.
-      </li>
-    </ul>
+
+  <div class="exhibitions-container">
+    <h2 class="exhibition-title">{{ groupExhibitions }}</h2>
+    <div class="grid-line"></div>
+    <div *ngFor="let exhibitionGroup of exhibitionsGroup; let i = index" class="exhibition-sub-container">
+      <ul class="exhibition-list-year">
+        <li *ngIf="i === 0 || exhibitionGroup.year !== exhibitionsGroup[i - 1].year">
+          <p>{{ exhibitionGroup.year }}</p>
+        </li>
+      </ul>
+      <ul class="exhibition-list-title">
+        <li>
+          <span>{{ exhibitionGroup.title }}</span>. <span class="exhibition-list-text">{{ exhibitionGroup.text }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="exhibitions-container">
+    <h2 class="exhibition-title">{{ scholarshipsPrizesAndResidencies }}</h2>
+    <div class="grid-line"></div>
+    <div *ngFor="let prize of prizes; let i = index" class="exhibition-sub-container">
+      <ul class="exhibition-list-year">
+        <li *ngIf="i === 0 || prize.year !== prizes[i - 1].year">
+          <p>{{ prize.year }}</p>
+        </li>
+      </ul>
+      <ul class="exhibition-list-title">
+        <li>
+          <span class="exhibition-list-text">{{ prize.title }}</span>.
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 </div>

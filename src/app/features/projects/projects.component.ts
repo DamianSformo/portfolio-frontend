@@ -9,14 +9,17 @@ import { ProjectService } from './services/project.service';
 })
 export class ProjectsComponent implements OnInit {
 
+  isLoading = false;
+
   projectsPreview: ProjectPreview[] = [];
 
   constructor(private projectService: ProjectService) { }
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.projectService.getPreview('es').subscribe((data: any) => {
       this.projectsPreview = data.response;
-      console.log(this.projectsPreview);
     });
+    this.isLoading = false;
   }
 }

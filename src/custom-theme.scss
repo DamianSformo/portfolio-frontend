@@ -4,17 +4,40 @@
 @use '@angular/material' as mat;
 // Plus imports for other components in your app.
 
+
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat.core();
+
+$mi-paleta-personalizada: (
+  50: #f3e5f5,
+  100: #e1bee7,
+  200: #ce93d8,
+  300: #ba68c8,
+  400: #ab47bc,
+  500: #9c27b0, // Color principal
+  600: #8e24aa,
+  700: #7b1fa2,
+  800: #6a1b9a,
+  900: #4a148c,
+  A100: #ea80fc,
+  A200: #e040fb,
+  A400: #d500f9,
+  A700: #aa00ff,
+);
+
+// Crea la paleta utilizando tu definición
+$custom-primary: mat.define-palette($mi-paleta-personalizada);
+
+
 
 // Define the theme object.
 $portfolio-theme: mat.define-theme((
   color: (
     theme-type: light,
     primary: mat.$azure-palette,
-    tertiary: mat.$blue-palette,
+    tertiary: mat.$violet-palette,
   ),
   density: (
     scale: 0,
