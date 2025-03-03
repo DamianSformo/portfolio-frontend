@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ExhibitionComponent } from './exhibition.component';
 
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; Â  
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +12,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; Â
   ],
   imports: [
     CommonModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    SharedModule
   ],
   exports: [ExhibitionComponent]
 })

@@ -8,6 +8,7 @@ import { BioService } from './services/bio.service';
 import { BioStudyComponent } from './components/bio-study/bio-study.component';
 import { BioBioComponent } from './components/bio-bio/bio-bio.component'; 
 
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({ declarations: [
         BioComponent,
@@ -18,7 +19,9 @@ import { BioBioComponent } from './components/bio-bio/bio-bio.component';
         BioComponent
     ], imports: [
         CommonModule,
-        BioRoutingModule
+        BioRoutingModule,
+        SharedModule
+        
     ], providers: [
         BioService,
         provideHttpClient(withInterceptorsFromDi())

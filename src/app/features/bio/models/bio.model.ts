@@ -3,6 +3,4 @@ export interface Bio {
     urlPhoto: string;
     textPhoto: string;
     bio: string;
-    bioShort: string;
-    statement: string;
 }

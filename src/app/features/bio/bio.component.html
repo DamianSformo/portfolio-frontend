@@ -1,3 +1,6 @@
-<!-- bio.component.html -->
-<app-bio-bio></app-bio-bio>
-<app-bio-study></app-bio-study>
+<app-spinner [isLoading]="isLoading"></app-spinner>
+
+<div [ngClass]="{'hidden': isLoading}">
+  <app-bio-bio (loaded)="onBioLoaded()"></app-bio-bio>
+  <app-bio-study (loaded)="onStudyLoaded()"></app-bio-study>
+</div>

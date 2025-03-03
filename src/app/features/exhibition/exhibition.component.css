@@ -5,20 +5,16 @@
 }
 
 .spinner-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* O la altura que prefieras */
-  }
-  
-  .my-custom-spinner {
-    color: #ff8000; /* Naranja */
-  }
-  
-  /* Color personalizado para el spinner (opcional) */
-  .mat-spinner circle {
-    stroke: #ff5722; /* Cambia el color aquí */
-  }
+    z-index: 9999;
+}
 
 .exhibition-container{
     margin-top: 20rem;

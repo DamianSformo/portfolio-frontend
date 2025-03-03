@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://portfolio-mrb-backend-efg0a5bpdmgzftav.canadacentral-01.azurewebsites.net'
+  apiUrl: 'https://portfolio-backend-hzabbzd7e8bacjbk.canadacentral-01.azurewebsites.net'
 };

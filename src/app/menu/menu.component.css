@@ -21,6 +21,9 @@
 }
 
 .toolbar-title {
+  text-decoration: none;
+  color: --primary-color;
+  color: inherit;
   margin: 0;
   font-size: 2rem;
 }

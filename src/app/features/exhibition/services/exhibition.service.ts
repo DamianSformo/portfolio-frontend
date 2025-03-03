@@ -14,7 +14,7 @@ export class ExhibitionService {
 
   getComplete( lang: string): Observable<ExhibitionComplete> {
     const url = `${environment.apiUrl}/exhibition/getComplete?lang=${lang}`;
-    return this.http.get<ExhibitionComplete>(url);
+    return this.http.get<ExhibitionComplete>(url); 
   }
 
 } 

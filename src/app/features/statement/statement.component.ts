@@ -1,4 +1,7 @@
 import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
+import { StatementService } from './services/statement.service';
+import { Statement } from './models/statement.model';
+import { LanguageService } from 'src/app/menu/language.service';
 
 @Component({
   selector: 'app-statement',
@@ -7,12 +10,24 @@ import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 })
 export class StatementComponent implements OnInit {
 
+  statement?: Statement;
+  currentLanguage: string = '';
+
   isPanelOpen: boolean = false;
   isClosing: boolean = false;
 
-  constructor(private elementRef: ElementRef) { }
+  constructor(
+    private elementRef: ElementRef,
+    private statementService: StatementService,
+    private languageService: LanguageService
+  ) { }
 
   ngOnInit(): void {
+    this.currentLanguage = this.languageService.getLanguage();
+    this.statementService.getStatementById(1, this.currentLanguage).subscribe((data: any) => {
+      this.statement = data.response;
+      
+    });
   }
 
   togglePanel(): void {

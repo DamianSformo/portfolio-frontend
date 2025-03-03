@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Study } from '../../models/study.model';
 import { BioService } from '../../services/bio.service';
 import { TranslationService } from 'src/app/services/translation.service';
@@ -10,6 +10,8 @@ import { LanguageService } from 'src/app/menu/language.service';
   styleUrls: ['./bio-study.component.css']
 })
 export class BioStudyComponent implements OnInit {
+
+  @Output() loaded = new EventEmitter<void>();
 
   study?: string; 
   studies: Study[] = [];
@@ -26,5 +28,8 @@ export class BioStudyComponent implements OnInit {
       this.studies = data.response;      
     });
     this.study = this.translationService.getTranslation('study');
+    setTimeout(() => {
+      this.loaded.emit();
+    }, 2000);
   }
 }

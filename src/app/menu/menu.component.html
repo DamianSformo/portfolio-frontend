@@ -1,7 +1,7 @@
 <div class="toolbar-wrapper">
   <mat-toolbar class="custom-toolbar">
     <div class="toolbar-content">
-      <p class="toolbar-title">Marcia Ruiz Bochides</p>
+      <a [routerLink]="['/']" class="toolbar-title">Marcia Ruiz Bochides</a>
       <button mat-icon-button class="menu-button" (click)="toggleMenu()">
         <mat-icon>{{ isMenuOpen ? 'close' : 'menu' }}</mat-icon>
       </button>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { BioService } from '../../services/bio.service';
 import { Bio } from '../../models/bio.model';
 import { TranslationService } from 'src/app/services/translation.service';
@@ -11,12 +11,14 @@ import { LanguageService } from 'src/app/menu/language.service';
 })
 export class BioBioComponent implements OnInit {
 
+  @Output() loaded = new EventEmitter<void>();
+
   aboutMe?: string; 
-  bio: Bio | undefined;
+  bio?: Bio;
   currentLanguage: string = '';
 
   constructor(
-    private bioService: BioService,
+    private bioService: BioService, 
     private translationService: TranslationService,
     private languageService: LanguageService) { }
 
@@ -26,5 +28,8 @@ export class BioBioComponent implements OnInit {
       this.bio = data.response;
     });
     this.aboutMe = this.translationService.getTranslation('aboutMe');
+    setTimeout(() => {
+      this.loaded.emit();
+    }, 2000);
   }
 } 

@@ -3,9 +3,7 @@
 <div class="exhibition-container">
 
   <!-- Spinner de carga -->
-  <div *ngIf="isLoading" class="spinner-container">
-    <mat-spinner [diameter]="50" color="tertiary"></mat-spinner>
-  </div>
+  <app-spinner [isLoading]="isLoading"></app-spinner>
 
   <div *ngIf="!isLoading">
   <div class="exhibitions-container">
